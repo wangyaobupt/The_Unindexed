@@ -9,5 +9,15 @@ layout: post
 title: "时间窗口里的工作法"
 ---
 ```
-3) ensuring the other parts of article are unchanged from the source
-4) commit and push
+3) if the source article starts with a top-level markdown title like `# Title`, remove that heading from the published version to avoid showing the title twice, because Jekyll already renders the page title from YAML
+4) other than the YAML front matter and possible removal of the duplicated top-level title, keep the article content unchanged from the source
+5) commit and push
+6) verify the final article on the live site after GitHub Pages rebuilds; at minimum check that:
+- the URL is correct and reachable
+- the title is not duplicated
+- math expressions render correctly when present
+
+lessons learned from the first publication:
+- `AGENTS.md` should stay excluded from the built site via `_config.yml`
+- math expressions are supported by the site through MathJax, so LaTeX-style inline math like `$...$` and display math like `\[...\]` can be published directly
+- the expected article URL pattern is `/YYYY/MM/DD/slug.html` once GitHub Pages is enabled for the repo
