@@ -1,0 +1,5 @@
+title: The Unindexed
+description: Essays and notes
+theme: minima
+exclude:
+  - AGENTS.md
