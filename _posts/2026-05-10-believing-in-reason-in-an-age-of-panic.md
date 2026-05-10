@@ -3,7 +3,7 @@ layout: post
 title: "在恐慌时代相信理性：Keynes 1930 的短文读后感"
 ---
 
-我读的是 John Maynard Keynes 1930 年的短文 *Economic Possibilities for our Grandchildren*。我并不是 Keynes 的信徒，更不喜欢那句被反复引用的 “in the long run we are all dead”。这句话在很多后来的使用里，有一种聪明人的犬儒感，好像只要眼前能处理过去，长期后果就可以交给别人。但这篇短文给我的感觉完全不同。它不是用长期逃避眼前，而是在眼前最恐慌的时候，仍然坚持向长期看。
+我读的是 John Maynard Keynes 1930 年的短文 *Economic Possibilities for our Grandchildren*。我并不是 Keynes 的信徒，更不喜欢那句被反复引用的 “in the long run we are all dead”。但这篇短文完全不同，它不是用长期逃避眼前，而是在眼前最恐慌的时候，仍然坚持向长期看。
 
 1930 年不是一个适合乐观的年份。大萧条已经开始，技术变化正在制造失业，很多人对现代经济秩序的信心正在瓦解。Keynes 在这样的时间写一篇谈一百年以后生活的文章，很容易被误读成一种上层知识分子的轻飘。但我读下来最受触动的地方，是他在那种环境里仍然能够推理。他没有假装痛苦不存在，也没有把当时的失调说成小事。他只是没有让时代情绪替他完成判断。
 
@@ -13,9 +13,9 @@ title: "在恐慌时代相信理性：Keynes 1930 的短文读后感"
 
 Keynes 对 technological unemployment 的判断，一百年后不需要改动任何一个字，除了把 `labor` 替换成 `intelligence`。
 
-Keynes 原文里的关键词是：“technological unemployment”，“economising the use of labour”，“new uses for labour”。
+> For the moment the very rapidity of these changes is hurting us and bringing difficult problems to solve, ... We are being afflicted with a new disease ... namely, technological unemployment. This means unemployment due to our discovery of means of economising the use of labour outrunning the pace at which we can find new uses for labour.
 
-这句话就是今天 AI 时代的核心问题。我们正在发现节省智力的方法，而且这个速度超过了我们发现智力新用途的速度。**它就是同一个结构，在更高层级上重现**：1930 年被机器节省的是劳动，今天被模型节省的是智力；恐慌的材料变了，恐慌的结构没有变。
+这句话就是今天 AI 时代的核心问题。我们正在发现节省智力的方法，而且这个速度超过了我们发现智力新用途的速度。**它就是同一个结构，在更高层级上重现**：1930 年被机器节省的是劳动，今天被模型节省的是智力；**恐慌的材料变了，恐慌的结构没有变**。
 
 Keynes 在恐慌里仍然敢于相信推理。他看见失业，也看见痛苦，但他把短期失调和长期趋势分开了。这个区分在恐慌时代非常难。因为人在恐慌里会本能地把正在发生的痛苦放大成永恒，把眼前的断裂理解成全部结构的崩塌。Keynes 没有这么做。他承认技术变化正在伤人，但他也判断，长期看，人类正在解决自己的经济问题。
 
@@ -27,7 +27,7 @@ Keynes 并非没有看见人的欲望，他选择相信“在绝对需求被满�
 
 一百年以后看，物质稀缺确实被技术大幅压低了。长期工作时间也确实下降了。按 Our World in Data 的工作时间数据，美国年工作时间从 1929 年约 2,316 小时到 2023 年约 1,789 小时，英国从约 2,257 小时到约 1,523 小时。COVID 期间许多社会经历过短暂停摆，基础物资供应也没有立刻坠回前现代匮乏。这些事情说明，生产能力确实已经解决了绝对需求。可是 15 小时工作制没有到来。我们没有在精神上进入丰裕。
 
-说这是因为人类贪婪太容易了，然而，扪心自问，你相信这仅仅是相对欲望造成的吗？你 996 是为了能当上 CEO 吗？
+说这是因为人类贪婪太容易了，然而，扪心自问，你相信仅仅是贪婪造成的吗？你 996 是为了能当上 CEO 吗？
 
 并不是每个人都想当国王、高官、老板，甚至不是每个人都想当 manager。现实里有很多人拒绝升职，也有更多人只是想普通地活着。现代社会真正厉害的地方，是把一些原本带有绝对需求性质的东西，重新做成了相对位置竞争。住房、教育、医疗，就是最典型的三个东西。房子不只是用来住。它关系到城市、学区、通勤、婚姻、资产、下一代起点。教育不只是学习。它关系到筛选、排序、资格、简历，以及一个家庭对未来风险的预付款。医疗不只是治病。它关系到一个家庭在脆弱时能不能避免被一次事故击穿。它们都有绝对需求的一面，但现代制度把它们变成相对位置品。你不一定想赢，但你不能输。很多人并不想赢。
 
