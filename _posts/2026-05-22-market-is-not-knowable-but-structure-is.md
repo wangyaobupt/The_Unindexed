@@ -10,7 +10,9 @@ title: "市场是可知的吗？"
 
 正是由于如此的环境，近来在social media上才多了很多有意思的段子，所谓“国家不幸诗家幸”，我也可以说“老登市场不幸，老登创作大幸”。下面引用几个有意思的
 
-1. Hi bro, just make fun
+<ol>
+  <li>Hi bro, just make fun</li>
+</ol>
 
 >
 >
@@ -24,13 +26,17 @@ title: "市场是可知的吗？"
 > From 江东猫草(https://mp.weixin.qq.com/s/bA3Q42crZpFzEfMkOrplmg)
 
 
-2. Deep Reflection
+<ol start="2">
+  <li>Deep Reflection</li>
+</ol>
 
 > 持有腾讯茅台快5年接近0收益，我终于悟了
 > from [**蒜香炒韭菜**](https://xueqiu.com/8361579532) (https://xueqiu.com/8361579532/390154206)
 
 
-3. 我們最近都在忙着干啥——Fund Manager PR全手册
+<ol start="3">
+  <li>我們最近都在忙着干啥——Fund Manager PR全手册</li>
+</ol>
 
 >
 >
