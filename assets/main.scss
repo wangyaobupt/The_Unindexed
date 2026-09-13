@@ -358,8 +358,28 @@ mjx-container[display="true"] {
   display: none;
 }
 
+// _includes/footer.html shadows minima's three-column footer with a single
+// copyright line.
 .site-footer {
   border-top: 1px solid #e8e8e8;
+  padding: 1.5rem 0;
+  font-size: .9rem;
+  color: #5f5f5f;
+}
+
+.site-footer-line {
+  margin: 0;
+}
+
+.site-footer a {
+  color: #5f5f5f;
+  text-decoration: underline;
+  text-underline-offset: .18em;
+  text-decoration-color: rgba(0, 0, 0, .25);
+
+  &:hover {
+    color: #111;
+  }
 }
 
 // --- Phone (<=600px) -------------------------------------------------------
