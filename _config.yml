@@ -1,5 +1,7 @@
 title: The Unindexed
 description: Essays and notes
+lang: zh-Hans
 theme: minima
+show_excerpts: true
 exclude:
   - AGENTS.md

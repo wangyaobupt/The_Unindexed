@@ -1,0 +1,367 @@
+---
+# Only the main Sass file needs front matter (the dashes are enough).
+# This file shadows minima 2.5.1's own assets/main.scss, which is the only
+# styling hook the theme exposes. Variables must be set BEFORE the import
+# (minima declares its own with !default); rule overrides go AFTER it.
+---
+
+@charset "utf-8";
+
+// ---------------------------------------------------------------------------
+// 1. Variables (must precede @import "minima")
+// ---------------------------------------------------------------------------
+
+// Measure: 680px wrapper => calc(680px - 60px) = 620px of text, about
+// 38 CJK / 76 Latin characters per line instead of minima's 91/46.
+// Keep $on-laptop == $content-width, the way minima's own defaults do, so the
+// wrapper switches to the narrow padding exactly when the column stops fitting.
+$content-width: 680px;
+$on-laptop:     680px;
+$on-palm:       600px;
+
+// $base-line-height is deliberately left at minima's 1.5: it drives the
+// site-header / site-nav line boxes (`$base-line-height * $base-font-size *
+// 2.25`), so raising it site-wide inflates the header. Reading line-height is
+// set on .post-content instead.
+
+$brand-color: #1756a9;
+
+// Latin faces first, CJK faces after, so 中英混排 keeps proper Latin shapes and
+// still resolves Chinese to a real UI face on every platform.
+$base-font-family:
+  -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial,
+  "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei", "Source Han Sans SC",
+  "Noto Sans CJK SC", "WenQuanYi Micro Hei", sans-serif,
+  "Apple Color Emoji", "Segoe UI Emoji";
+
+// Code blocks on this site contain Chinese (ASCII diagrams with CJK labels), so
+// the mono stack needs the same CJK tail or the fallback is a serif face.
+$code-font-family:
+  "SF Mono", Menlo, Consolas, "Liberation Mono", monospace,
+  "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei", "Source Han Sans SC",
+  "Noto Sans CJK SC", "WenQuanYi Micro Hei";
+
+@import "minima";
+
+// ---------------------------------------------------------------------------
+// 2. Overrides
+// ---------------------------------------------------------------------------
+
+// --- Overflow safety (site-wide last resort) -------------------------------
+html,
+body {
+  overflow-x: hidden;
+}
+
+// --- Blockquotes -----------------------------------------------------------
+// Highest-priority fix: minima's italic + -1px tracking shears CJK glyphs,
+// which have no true italic and get a faux oblique transform.
+blockquote {
+  font-style: normal;
+  letter-spacing: normal;
+  color: #3a3a3a;
+  font-size: 1rem;
+  line-height: 1.8;
+  border-left: 4px solid #d0d0d0;
+  padding: 2px 0 2px 18px;
+  margin: 1.6em 0;
+
+  > :last-child {
+    margin-bottom: 0;
+  }
+
+  strong {
+    font-weight: 600;
+  }
+}
+
+// --- Code ------------------------------------------------------------------
+pre,
+code {
+  font-family: $code-font-family;
+}
+
+pre {
+  line-height: 1.6;
+  font-size: 0.9rem;
+  overflow-x: auto;
+}
+
+// --- Post content: measure, rhythm, wrapping -------------------------------
+.post-content {
+  line-height: 1.8;
+  overflow-wrap: break-word;
+  overflow-wrap: anywhere;
+  word-break: break-word;
+
+  p,
+  li,
+  blockquote,
+  td,
+  th,
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6 {
+    overflow-wrap: break-word;
+    overflow-wrap: anywhere;
+    word-break: break-word;
+  }
+
+  p,
+  li {
+    line-height: 1.8;
+  }
+
+  p {
+    margin: 0 0 1.4em;
+  }
+
+  li {
+    margin-bottom: 0.4em;
+  }
+
+  // minima never styles .post-content h1, so a body `# ` fell back to the UA's
+  // 2em == the same 32px as h2. Style all four explicitly.
+  h1,
+  h2,
+  h3,
+  h4 {
+    line-height: 1.4;
+    margin: 2.2em 0 0.8em;
+    font-weight: 600;
+    color: #111;
+  }
+
+  h1 { font-size: 1.75rem; }
+  h2 { font-size: 1.5rem; }
+  h3 { font-size: 1.2rem; }
+  h4 { font-size: 1.05rem; }
+
+  > :first-child {
+    margin-top: 0;
+  }
+
+  // Nested list markers: minima leaves decimal at every ol level.
+  ol ol {
+    list-style-type: lower-alpha;
+  }
+
+  ol ol ol {
+    list-style-type: lower-roman;
+  }
+
+  ul ul {
+    list-style-type: circle;
+  }
+
+  // Images
+  img {
+    max-width: 100%;
+    height: auto;
+    display: block;
+    margin: 1.6em auto;
+  }
+
+  // Inline emoji shipped as <img> (05-22) must not become 90px block images.
+  img[src*="emoji"] {
+    display: inline-block;
+    height: 1.4em;
+    width: auto;
+    margin: 0 0.15em;
+    vertical-align: -0.25em;
+  }
+
+  // Links: minima's colour-only signal at 4.15:1 becomes an underlined,
+  // AA-contrast link.
+  a {
+    color: #1756a9;
+    text-decoration: underline;
+    text-decoration-thickness: 1px;
+    text-underline-offset: 0.18em;
+    text-decoration-color: rgba(23, 86, 169, 0.4);
+
+    &:visited {
+      color: #1756a9;
+    }
+
+    &:hover {
+      color: #1756a9;
+      text-decoration-color: currentColor;
+    }
+  }
+}
+
+// --- MathJax 3 (CHTML) -----------------------------------------------------
+// Display equations are wider than a 360px phone column; without this the whole
+// document scrolls sideways and the equation is truncated.
+mjx-container {
+  max-width: 100%;
+}
+
+mjx-container[display="true"] {
+  display: block;
+  overflow-x: auto;
+  overflow-y: hidden;
+  max-width: 100%;
+  padding: 2px 0 6px;
+  -webkit-overflow-scrolling: touch;
+}
+
+// --- Tables ----------------------------------------------------------------
+// `display: block` is scoped to narrow viewports only: on desktop it would
+// collapse the table to shrink-to-fit width.
+@media screen and (max-width: 800px) {
+  .post-content table {
+    display: block;
+    max-width: 100%;
+    overflow-x: auto;
+  }
+}
+
+// --- Post header -----------------------------------------------------------
+.post-title {
+  font-size: 2.25rem;
+  line-height: 1.25;
+  letter-spacing: normal;
+  font-weight: 600;
+}
+
+.post-meta {
+  color: #5f5f5f;
+}
+
+// --- Prev / next navigation (see _layouts/post.html) -----------------------
+.post-nav {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1rem;
+  justify-content: space-between;
+  margin-top: 3rem;
+  border-top: 1px solid #e8e8e8;
+  padding-top: 1.2rem;
+  font-size: 0.95rem;
+
+  a {
+    text-decoration: none;
+    color: $brand-color;
+
+    &:visited {
+      color: $brand-color;
+    }
+
+    &:hover {
+      text-decoration: underline;
+    }
+  }
+}
+
+.post-nav-all {
+  margin-left: auto;
+}
+
+// --- Home ------------------------------------------------------------------
+.post-list {
+  > li {
+    margin-bottom: 2.2rem;
+  }
+
+  h3 {
+    margin-bottom: 0.2em;
+  }
+
+  // Excerpt paragraphs (show_excerpts: true)
+  p {
+    color: #444;
+    line-height: 1.8;
+    margin-top: 0.4em;
+    overflow-wrap: break-word;
+    overflow-wrap: anywhere;
+    word-break: break-word;
+  }
+
+  // Ten of the 25 posts open with a heading, a blockquote or a list, so
+  // post.excerpt is not always a <p>. Render every excerpt shape at excerpt
+  // weight rather than letting a body h2 outshout the post title above it.
+  li > h1,
+  li > h2,
+  li > h4,
+  li > h5,
+  li > h6 {
+    font-size: 1rem;
+    font-weight: 400;
+    color: #444;
+    line-height: 1.8;
+    margin: 0.4em 0 0;
+  }
+
+  li > blockquote {
+    font-size: 1rem;
+    color: #444;
+    line-height: 1.8;
+    margin: 0.4em 0 0;
+    border-left-width: 3px;
+  }
+
+  li > ol,
+  li > ul {
+    color: #444;
+    line-height: 1.8;
+    margin-top: 0.4em;
+    margin-bottom: 0;
+  }
+}
+
+.post-link {
+  color: #111;
+  text-decoration: none;
+  line-height: 1.35;
+  font-size: 1.35rem;
+
+  &:visited {
+    color: #111;
+  }
+
+  &:hover {
+    color: $brand-color;
+    text-decoration: underline;
+  }
+}
+
+// --- Header / footer -------------------------------------------------------
+.site-header {
+  border-top: 0;
+  border-bottom: 1px solid #e8e8e8;
+}
+
+.site-title {
+  font-weight: 600;
+  letter-spacing: normal;
+}
+
+// index.md no longer carries a `title`, so minima's header.html renders the
+// <nav> shell (and, at <=600px, the hamburger) with zero .page-link children.
+// There are no other pages on this site, so the whole nav is hidden.
+.site-nav {
+  display: none;
+}
+
+.site-footer {
+  border-top: 1px solid #e8e8e8;
+}
+
+// --- Phone (<=600px) -------------------------------------------------------
+// Placed last so it also beats minima's own `.post-content h2` media-query
+// rules, which now fire at <=680px because $on-laptop == $content-width.
+@media screen and (max-width: 600px) {
+  .post-title {
+    font-size: 1.75rem;
+  }
+
+  .post-content h1 { font-size: 1.5rem; }
+  .post-content h2 { font-size: 1.3rem; }
+  .post-content h3 { font-size: 1.1rem; }
+  .post-content h4 { font-size: 1.05rem; }
+}
