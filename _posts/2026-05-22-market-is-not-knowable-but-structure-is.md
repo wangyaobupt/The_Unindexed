@@ -1,6 +1,7 @@
 ---
 layout: post
 title: "市场是可知的吗？"
+excerpt: "最近市场上最红的莫过于“Token Path”上的企业，无论是电力、制冷还是光模块，再加上TSMC、Hynix、Samsung，更不用说这一轮革命的旗手Jensen Huang、Sam、Dario等人的公司。真可称得上“红得发紫”，所有沾边的公司都与有荣焉。"
 ---
 ## 引子
 

@@ -1,6 +1,7 @@
 ---
 layout: post
 title: "能长期存在的，不需要用理性自证"
+excerpt: "我最近看到一个关于中国居民资产配置的研究，题目是[《一个观察我国居民资产配置行为的新框架——兼议“存款搬家”是否成立》](https://www.cf40.com/report/chinese/2219)。它让我停下来的地方，不在某个宏观结论本身。它把一个长期被很多人当成“非理性”的现象，重新放回了一个更硬的框架里。"
 ---
 
 > By definition, what works cannot be irrational; about every single person I know who has chronically failed in business shares that mental block, the failure to realize that if something stupid works (and makes money), it cannot be stupid.

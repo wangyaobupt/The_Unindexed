@@ -1,6 +1,7 @@
 ---
 layout: post
 title: "写代码只是最窄的名字"
+excerpt: "为什么是 coding agent 先跑出了商业价值？很多人很自然地把答案落在程序员身上。"
 ---
 
 为什么是 coding agent 先跑出了商业价值？

@@ -1,6 +1,7 @@
 ---
 layout: post
 title: "Is Skill a Natural Language Program in the Agent Era? Knowns and Unknowns"
+excerpt: "A skill can be viewed as a computer program written in natural language. An agent paired with a foundation model is the interpreter."
 ---
 
 ## The hypothesis

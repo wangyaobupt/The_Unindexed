@@ -1,6 +1,7 @@
 ---
 layout: post
 title: "Endless Siren in the market"
+excerpt: "此处我有个相当简单的问题：Odysseus为什么不自己堵上耳朵，而是非得听着歌声让水手绑着自己？"
 ---
 
 ## 荷马的故事，我的问题

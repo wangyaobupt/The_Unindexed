@@ -1,6 +1,7 @@
 ---
 layout: post
 title: "谁有资格解释意义"
+excerpt: "我在准备把一个项目作为创业目标，于是要写BP。每一个听众都挑不出任何逻辑漏洞，然而，我收获的feedback是：很好、无懈可击，但是不够impressive"
 ---
 
 ## 引子

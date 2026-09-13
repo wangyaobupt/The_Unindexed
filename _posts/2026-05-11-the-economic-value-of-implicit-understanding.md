@@ -1,6 +1,7 @@
 ---
 layout: post
 title: "被理解的经济价值"
+excerpt: "我以前对 AI to C Chatbot 的判断比较悲观（[AI to C 的战争税单](https://wangyaobupt.github.io/The_Unindexed/2026/05/08/ai-to-c-war-tax.html)）。这个形态太容易变成一门难看的生意：用户要求它什么都能答，却未必愿意为某一个 Chatbot 长期付钱；每一次回答背后都有推理成本，但用户的问题本身又经常没有足够高的商业价值。"
 ---
 
 ## 从Chatbot的商业价值说起

@@ -1,6 +1,7 @@
 ---
 layout: post
 title: '智能的分类：语言不是"通用智能"的全部'
+excerpt: '"LLM → Agent → AGI"叙事是有本质缺陷的，LLM没有学到"General Intelligence"，你凭什么觉得scaling下去就能得到General Intelligence？'
 ---
 
 ## 语言不是智能的全部形式

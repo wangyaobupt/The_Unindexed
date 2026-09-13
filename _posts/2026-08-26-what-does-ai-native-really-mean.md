@@ -1,6 +1,7 @@
 ---
 layout: post
 title: "到底什么是AI Native"
+excerpt: '有人拿索洛（Solow）的名言来讽刺AI："Computer Age is everywhere but productivity statistics"，怀疑论者只要把Computer Age换成AI就能用。'
 ---
 
 ## 缘起
