@@ -375,3 +375,136 @@ mjx-container[display="true"] {
   .post-content h3 { font-size: 1.1rem; }
   .post-content h4 { font-size: 1.05rem; }
 }
+
+// --- Table of contents (see _layouts/post.html + assets/toc.js) ------------
+// One markup shape, two presentations:
+//   >= 1180px  a sticky rail in the right margin, outside the text column
+//   <  1180px  a collapsible <details> block above the article
+// assets/toc.js renders <nav.toc><details.toc-details><summary.toc-title>…
+// and drives the `open` attribute from a matchMedia listener, because a
+// <details> cannot be forced open from CSS.
+
+// `position: sticky` is measured against the nearest scrollport. Both `html`
+// and `body` carry `overflow-x: hidden` above (overflow safety), and a `body`
+// with a non-visible overflow becomes a non-scrolling scrollport, which kills
+// sticky. `overflow-x: clip` clips exactly the same way without creating a
+// scroll container, so where it is supported it replaces `hidden`.
+@supports (overflow-x: clip) {
+  html,
+  body {
+    overflow-x: clip;
+  }
+}
+
+.post {
+  position: relative;
+}
+
+.toc-aside {
+  &[hidden] {
+    display: none;
+  }
+}
+
+.toc {
+  font-size: 13.5px;
+  line-height: 1.5;
+  color: #5f5f5f;
+
+  ol {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+  }
+
+  li {
+    margin: 0;
+  }
+
+  .toc-sublist {
+    padding-left: 12px;
+  }
+
+  a {
+    display: block;
+    color: #5f5f5f;
+    text-decoration: none;
+    padding: 3px 0 3px 10px;
+    border-left: 2px solid transparent;
+    overflow-wrap: break-word;
+    word-break: break-word;
+
+    &:visited {
+      color: #5f5f5f;
+    }
+
+    &:hover {
+      color: #111;
+    }
+
+    &.is-active {
+      color: #111;
+      font-weight: 600;
+      border-left-color: $brand-color;
+    }
+  }
+}
+
+.toc-title {
+  font-size: 13px;
+  font-weight: 600;
+  color: #111;
+  cursor: pointer;
+}
+
+// --- Wide: sticky rail in the right margin ---------------------------------
+// The aside is zero-height with `overflow: visible`, so it contributes nothing
+// to the article's flow; only its child .toc box is painted. `margin-left:
+// calc(100% + 40px)` pushes it 40px past the right edge of the 620px column.
+// At 1180px: column left = 280px, rail spans 940–1160px, inside the viewport.
+@media screen and (min-width: 1180px) {
+  .toc-aside {
+    position: sticky;
+    top: 24px;
+    z-index: 1;
+    width: 220px;
+    height: 0;
+    margin-left: calc(100% + 40px);
+    overflow: visible;
+  }
+
+  .toc {
+    max-height: calc(100vh - 48px);
+    overflow-y: auto;
+  }
+
+  .toc-details > .toc-title {
+    // Always open on wide screens: show the label, hide the disclosure
+    // triangle, and make it inert so a stray click cannot collapse the rail.
+    list-style: none;
+    cursor: default;
+    pointer-events: none;
+    margin-bottom: 0.5em;
+
+    &::-webkit-details-marker {
+      display: none;
+    }
+  }
+}
+
+// --- Narrow: collapsible block between the header and the article ----------
+@media screen and (max-width: 1179px) {
+  .toc-aside {
+    display: block;
+    margin: 0 0 1.6em;
+  }
+
+  .toc {
+    border: 1px solid #e8e8e8;
+    padding: 10px 14px;
+  }
+
+  .toc-details[open] > .toc-title {
+    margin-bottom: 0.4em;
+  }
+}
