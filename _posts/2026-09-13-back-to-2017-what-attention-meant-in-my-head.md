@@ -13,9 +13,9 @@ title: "回到2017，我头脑中的Attention是什么？"
 
 **2017 年，我们可能低估了一个通用结构；2026 年，我们会不会又把一个在特定领域取得巨大成功的结构，误认为了普遍规律？**
 
-# Prologue
+## 复习功课：Attention的数学
 
-## What
+### What
 
 我们先开始复习功课，Attention的数学表达A(X)如下
 
@@ -45,7 +45,7 @@ in which, $M = W_QW_K^T$，这是一个head。如果你有multi-head，那就有
 
 That's it. 
 
-## Why
+### Why
 
 为什么设计不同频率、周期函数的PE？老师讲过，因为这样的三角函数具备了如下性质
 
@@ -63,7 +63,7 @@ Good Enough！
 
 站在今天，我坦诚地说，当年我没回答过这个why，甚至没有正经问过。因为大家都在说这篇文章taste很好，我要是去问这样的“细节”，我是不是很low。
 
-## So, what?
+### So, what?
 
 关于PE的讨论一言以蔽之：
 
@@ -73,11 +73,11 @@ Good Enough！
 于是，当今流传广泛的一句话“Transformer is able to find whatever patterns from sequence you give them”，需要先说一个前提：你要研究的sequence-to-sequence任务的信息来自什么结构，你如何把这个结构embedding到适合线性代数计算的几何空间。
 即便在今天，无数个讲解Attention的课堂/教材里，能谈到“what geometry they inhabit”的时刻仍然并不常见。
 
-# 假使回到2017，我miss了什么？
+## 假使回到2017，我miss了什么？
 
 Attention不是2017年出来的新词，从15年开始，大家用RNN/LSTM做NMT任务的时候，就发现了the decoder could dynamically weight different encoder states，所谓attention layer。在2017年那一刻，我读完这篇文章，头脑中真实的反应只是softmax。这是another attention paper。
 
-## 我遗漏了什么？
+### 我遗漏了什么？
 
 “Attention is **ALL** you need”
 
@@ -102,7 +102,7 @@ $$
 
 > 💡 不要过早设计 information flow 的具体路径；设计**一个足够简单、足够通用、可以被数据配置的结构**
 
-## 站在当时，什么是“看到”？
+### 站在当时，什么是“看到”？
 
 不只是我一个人的限制，如果有足够多的人看到这一层，应该有很多人去研究BERT或者GPT。
 更进一步，只有看出这一层，即“Attention is ALL you need”（你不需要设计计算结构）的人，才有可能看出来，这个技术不止是一个更好的NMT神经网络架构，而是
@@ -116,18 +116,18 @@ $$
 > 💡 Given transformer's capturing capability, what happens if this keeps working at 10×, 100×, 1000× scale?
 
 
-## Name matters: 名正则言顺
+### Name matters: 名正则言顺
 
 BERT和GPT是很好的一个案例。
 
 如果你称研究对象是 Bidirectional Encoder Representations from Transformers，你已经认识到这是通用任务了，Encoder Representations不需要管下游任务是什么。Generative Pre-trained Transformer 同样没有任何任务，就是Generative。这两个名字证明了，我今天说的“看到结构”不完全是牵强附会，至少是他们当时想法的一种“可能的重建”。
 
-## 什么不是当时可以看到的？
+### 什么不是当时可以看到的？
 
 “web-scale pretraining + RLHF + instruction tuning + tool use”，这些后来的成功的必要配方，不可能、**也不需要**在当时看到。
 2017年底的OpenAI和Google Brain，没有人能保证web-scale pretraining带来什么样的结果，CEO也没条件先拿到1T USD去买卡和数据。真正的伟大恰恰是从这个时候开始的。
 
-# 回到2026，这对我意味着什么
+## 回到2026，这对我意味着什么
 
 抽象地说，在下一次技术变革时看到结构，肯定比2017年知乎上说“你要有taste”管用。但也没有那么管用，谁知道下一次突变时刻我自己的认知准备到了哪一层呢？
 所以，我用一个具象的案例来说。

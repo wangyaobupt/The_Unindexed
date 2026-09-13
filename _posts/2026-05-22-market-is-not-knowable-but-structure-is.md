@@ -81,11 +81,11 @@ title: "市场是可知的吗？"
 >
 > 基金經理：別提了，忙死了。我們天天都忙着向客戶解釋，我們只是買早了，讓他們千萬不要贖回……
 >
-> ![哭泣](https://assets.imedao.com/ugc/images/face/v1/emoji_09_cry.png?v=1)
+> 😭
 >
-> ![哭泣](https://assets.imedao.com/ugc/images/face/v1/emoji_09_cry.png?v=1)
+> 😭
 >
-> ![哭泣](https://assets.imedao.com/ugc/images/face/v1/emoji_09_cry.png?v=1)
+> 😭
 >
 > 作者：管我财
 >

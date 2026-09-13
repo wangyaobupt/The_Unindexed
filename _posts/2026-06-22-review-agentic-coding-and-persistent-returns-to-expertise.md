@@ -17,9 +17,17 @@ title: "评 ‘Agentic coding and persistent returns to expertise’"
 
 这里要特别强调某个Task，即Task specific，在这份研究报告中，研究团队不是在评价用户这个人有多专业，而是在这个session（对于agent来说这就是一个task）里面，用户的行为有多专业。
 
-更详细的例子参见原文Table 1
+更详细的例子参见原文Table 1（转录如下）
 
-![](https://www.anthropic.com/_next/image?url=https%3A%2F%2Fwww-cdn.anthropic.com%2Fimages%2F4zrzovbb%2Fwebsite%2Fffb14937444e81d80b38d7b085438b61d5ea46ff-1850x1830.png&w=3840&q=75)
+| Expertise | What the classifier looks for | Representative requests across a conversation |
+| --- | --- | --- |
+| 1 (Novice) | User requests have no domain-specific nomenclature. Verification requests, if any, are generic (e.g. “double check this”). User doesn’t recognize Claude’s errors. | **1st prompt:** Can you analyze this data and make a chart?<br>**3rd prompt:** Can you also make it show the trend over time?<br>**6th prompt:** That’s not what I expected please double-check what you did. |
+| 2 (Beginner) | User requests have some domain terminology. Verification requests are untargeted. User pushes back only on obvious errors. | **1st prompt:** What is big query<br>**2nd prompt:** Can you help me do a small run? walk me through it<br>**5th prompt:** How can I tell if I have approval<br>**12th prompt:** Wait did you use the exact specification my teammate did? |
+| 3 (Intermediate) | User frames requests with some domain specificity, but does not engage deeply on methodology or tradeoffs. User asks for some non-generic checks, and may notice Claude’s errors. | **1st prompt:** can you check whether this branch is ok to merge?<br>**7th prompt:** should we do seperate fetchers for each part of the page and then wouldn’’t that optimize caching for each section?  like we could cache basic details more than say performance data?<br>**19th prompt:** ok all good so far – where are we on caching? do you think the changes you made will bring down  egress on `[database provider]`?  resolve whatever’s left from my changes please |
+| 4 (Advanced) | User exhibits domain knowledge and anticipates some tradeoffs unprompted. Verification requests are targeted. User catches at least one of Claude’s domain mistakes. | **2nd prompt:** what’s the right way to test this stage before going to stage 3? ?<br>**5th prompt:** wait how’s an agent console different from normal chat? I’m pretty sure the only way to talk to an agent at all is through this session console view<br>**88th prompt:** it looks like the parsing fix didn’t work – line count of the file is still 742 :<br>`wc -l [file name]`<br>**106th prompt:** instead of regex is there a better / more bullet proof way to pull out user turns i.e. like key off the record field when prsing  the jsonl |
+| 5 (Expert) | User employs sophisticated domain-specific jargon and anticipates intricate tradeoffs and design decisions. Verification is precise, targeting weak points. User corrects Claude, Claude almost never corrects the user. | **1st prompt:** I need to dig into the  the issue `[user]` reported here: `[url]` note that the fix we did  in the last release’s PR wasn’t enough. any other ideas?<br>**3rd prompt:** once the code is cleared  it shouldn’t be returning `****`<br>**64th prompt:** yeah okay.  should also note that we might need to break hard refresh down further by managed vs unmanaged slots e.g. managed ones could refresh every 30 min but rhe rest once a day<br>**108th prompt:** should we do retries instead of best effort?  sync needs to reliably know what's on the lock. Remember the original bug where the valuedb was stale and it created a loop trying to set the pin over and over. retries aren’t necessarily the best solution but neither is best effort |
+
+（来源：原文 Table 1，[原图链接](https://www-cdn.anthropic.com/images/4zrzovbb/website/ffb14937444e81d80b38d7b085438b61d5ea46ff-1850x1830.png)）
 
 毫不意外的是，对于高级别用户（level 5），agent执行了更多的工作(actions per turn), 且生成了更多的输出[Fig 3]。此外，用户专业水平越高，其任务成功率，出现错误之后能纠正回来的几率，都明显更高[Fig.5]
 

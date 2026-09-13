@@ -110,6 +110,16 @@ pre {
     word-break: break-word;
   }
 
+  // Table cells keep `break-word` for genuinely unbreakable tokens, but not
+  // `anywhere`: with `anywhere` a cell's min-content width drops to a single
+  // character, so a short column next to long ones collapses to one letter
+  // per line. CJK still wraps per character without it.
+  td,
+  th {
+    overflow-wrap: break-word;
+    word-break: normal;
+  }
+
   p,
   li {
     line-height: 1.8;
